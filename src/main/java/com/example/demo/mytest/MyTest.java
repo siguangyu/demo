@@ -23,7 +23,7 @@ public class MyTest {
 
         //测试git
 
-        String[] words = {"Hello", "World","ceshi"};
+        String[] words = {"Hello", "World","ceshi","测试2"};
         //数组转换流
         //去掉“”并获取到两个String[]
         //方法调用将两个String[]扁平化为一个stream
