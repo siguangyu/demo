@@ -20,7 +20,10 @@ import java.util.stream.Stream;
 public class MyTest {
     public static void main(String[] args) {
 
-        String[] words = {"Hello", "World"};
+
+        //测试git
+
+        String[] words = {"Hello", "World","ceshi","测试2","测试3"};
         //数组转换流
         //去掉“”并获取到两个String[]
         //方法调用将两个String[]扁平化为一个stream
