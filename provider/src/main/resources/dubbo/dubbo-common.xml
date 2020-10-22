@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://code.alibabatech.com/schema/dubbo
+    http://code.alibabatech.com/schema/dubbo/dubbo.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <dubbo:application name="test_service" />
+
+    <!-- 注册中心暴露服务地址 -->
+    <dubbo:registry protocol="zookeeper" client="curator" address="${dubbo.registry.address}" />
+    <dubbo:protocol name="dubbo" port="${dubbo.protocol.port}" server="netty4" client="netty4" serialization="hessian2" charset="utf-8"
+                    threadpool="fixed" threads="${dubbo.protocol.threads}" queues="${dubbo.protocol.queues}" iothreads="${dubbo.protocol.iothreads}" accepts="${dubbo.protocol.accepts}" payload="${dubbo.protocol.payload}"/>
+
+    <dubbo:provider delay="-1" timeout="${dubbo.timeout}" retries="0"/>
+    <!--<dubbo:annotation package="com.eiisys.sms.manage.service"/>-->
+    <!--<context:component-scan base-package="com.eiisys.sms.manage.service.impl" />-->
+</beans>
